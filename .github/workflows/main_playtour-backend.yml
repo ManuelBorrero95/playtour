@@ -15,20 +15,21 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+      - name: debug file structure
+        run: ls -R
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0'
 
       - name: Restore dependencies
-        run: dotnet restore Backend/Backend.csproj
+        run: dotnet restore Backend/Backend/Backend.csproj
 
       - name: Build
-        run: dotnet build Backend/Backend.csproj --configuration Release --no-restore
+        run: dotnet build Backend/Backend/Backend.csproj --configuration Release --no-restore
 
       - name: Publish
-        run: dotnet publish Backend/Backend.csproj --configuration Release --output publish_output --no-build
+        run: dotnet publish Backend/Backend/Backend.csproj --configuration Release --output publish_output --no-build
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
