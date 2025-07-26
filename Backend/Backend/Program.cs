@@ -12,9 +12,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp",
         policy =>
         {
-            policy.WithOrigins("http://localhost:3000")
-                  .AllowAnyHeader()
-                  .AllowAnyMethod();
+            policy.WithOrigins(
+            "http://localhost:3000",
+            "https://playtour-frontend.azurestaticapps.net"
+        ).AllowAnyHeader()
+        .AllowAnyMethod();
         });
 });
 
@@ -36,5 +38,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.Run();
