@@ -14,7 +14,7 @@ builder.Services.AddCors(options =>
         {
             policy.WithOrigins(
             "http://localhost:3000",
-            "https://playtour-frontend.azurestaticapps.net"
+            "https://playtour.vercel.app/"
         ).AllowAnyHeader()
         .AllowAnyMethod();
         });
