@@ -14,7 +14,7 @@ builder.Services.AddCors(options =>
         {
             policy.WithOrigins(
             "http://localhost:3000",
-            "https://playtour.vercel.app/"
+            "https://playtour.vercel.app"
         ).AllowAnyHeader()
         .AllowAnyMethod();
         });
@@ -24,6 +24,8 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+app.UseCors("AllowReactApp");
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -31,7 +33,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("AllowReactApp");
 
 app.UseHttpsRedirection();
 
