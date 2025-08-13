@@ -35,7 +35,7 @@ import { Routes, Route } from 'react-router-dom'
  import CreateEvent from './pages/CreateEvent.jsx'
 
 //import PlaytourLayout from "/PlaytourLayout.jsx"
-import PlayTourLayout from './playTourLayout.jsx'
+import PlayTourLayout from './PlayTourLayout.jsx'
 
 export default function App() {
   return <PlayTourLayout />
