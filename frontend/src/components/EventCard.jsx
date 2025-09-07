@@ -1,46 +1,70 @@
-import { Link } from "react-router-dom";
-// se l'immagine è in src/assets, importala così:
-// import thumb from "../assets/padel.jpg";
+import ccio from "../assets/2.jpg";
 
 export default function EventCard({
-  title = "Torneo Paladium",
-  time = "10:00 – 13:00",
-  club = "Club Paladium",
-  address = "C/ Baloo 12, Barcelona",
-  image = "/padel.jpg", // se metti l'immagine in /public
-  to = "/evento/torneo-paladium", // link alla pagina dettaglio
-  onSignup, // callback opzionale per bottone
+  image = "https://picsum.photos/id/1011/1200/900",
+  kicker = "Places Available",
+  title = "UCFB Manchester\nUndergraduate\nOpen Day (PM Session)",
+  month = "Sep",
+  day = "16",
+  year = "2025",
+  locationLabel = "UCFB\nManchester",
+  timeLabel = "13:00pm",
+  durationLabel = "(2 hour)",
+  to = "#",
 }) {
   return (
-    <article className="w-full border-gray-300 border bg-white shadow-sm overflow-hidden mb-3">
-      <div className="flex items-center">
-        {/* thumb */}
-        <Link to={to} className="shrink-0">
-          <img
-            src={image}
-            alt={title}
-            className="h-16 w-24 object-cover"
-          />
-        </Link>
+    <article
+      className="relative w-full h-[620px] md:h-[680px] bg-cover bg-center bg-no-repeat overflow-hidden"
+      style={{ backgroundImage: `url(${ccio})` }}
+    >
+      {/* Overlay: più scuro in basso, leggero verso l’alto */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/40 to-transparent" />
 
-        {/* testo */}
-        <div className="flex-1 px-3 py-2">
-          <Link to={to} className="block">
-            <h3 className="text-sm font-semibold leading-tight">{title}</h3>
-          </Link>
-          <p className="text-xs text-gray-700">{time}</p>
-          <p className="text-xs text-gray-700">{club}</p>
-          <p className="text-xs text-gray-500">{address}</p>
-        </div>
+      {/* Ribbon data in alto a destra */}
+      <div className="absolute top-4 right-4 z-20 bg-[#A2C617] text-gray-900 rounded-l-lg shadow-md px-4 py-3 flex flex-col items-center leading-none">
+        <span className="text-sm font-semibold tracking-wide uppercase">{month}</span>
+        <span className="text-4xl font-extrabold">{day}</span>
+        <span className="text-xs font-semibold mt-1">{year}</span>
+      </div>
 
-        {/* azione */}
-        <div className="px-3">
-          <button
-            onClick={onSignup}
-            className="text-xs rounded-md bg-blue-600 text-white px-3 py-1 hover:bg-blue-700 transition"
-          >
-            Inscribirse
-          </button>
+      {/* Contenuto */}
+      <div className="relative z-10 h-full flex">
+        <div className="self-end p-5 sm:p-7 md:p-9 max-w-xl text-white">
+          {/* kicker piccolo */}
+          <p className="text-white/85 text-sm mb-2">{kicker}</p>
+
+          {/* titolo multilinea */}
+          <h2 className="whitespace-pre-line font-extrabold leading-tight text-3xl sm:text-4xl">
+            {title}
+          </h2>
+
+          {/* meta: icona + label + divisore + orario/durata */}
+          <div className="mt-6 flex flex-wrap items-center gap-4 text-white/95 text-base">
+            <div className="flex items-start gap-2">
+              {/* pin/location (svg inline per semplicità) */}
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-[2px]">
+                <path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" stroke="currentColor" strokeWidth="1.6"/>
+                <circle cx="12" cy="10" r="2.5" stroke="currentColor" strokeWidth="1.6"/>
+              </svg>
+              <span className="whitespace-pre-line"> {locationLabel}</span>
+            </div>
+
+            <span className="h-5 w-px bg-white/40" />
+
+            <div className="flex items-center gap-2">
+              <span>{timeLabel}</span>
+              <span className="text-white/80">{durationLabel}</span>
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <a
+              href={to}
+              className="inline-block px-4 py-2 rounded-md bg-white/90 text-gray-900 text-sm hover:bg-white"
+            >
+              Dettagli
+            </a>
+          </div>
         </div>
       </div>
     </article>
