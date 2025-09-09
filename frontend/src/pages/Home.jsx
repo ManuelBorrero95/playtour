@@ -55,7 +55,7 @@ const Home = () => {
         to="/evento/open-weekend"
       />
         <EventCard
-        title="Open Weekend"
+        title="Open Weekend" 
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
