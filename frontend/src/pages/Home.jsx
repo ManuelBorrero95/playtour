@@ -9,7 +9,7 @@ const Home = () => {
     time: "10:00 – 13:00",
     club: "Club Paladium",
     address: "C/ Baloo 12, Barcelona",
-    image: "../src/assets/2.jpg", 
+    image: "./src/assets/image.jpg", 
     to: "/evento/torneo-paladium",
   };
 
@@ -27,7 +27,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="../src/assets/2.jpg"
+        image="./src/assets/image.jpg"
         to="/evento/open-weekend"
       />
         <EventCard
@@ -35,7 +35,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="../src/assets/2.jpg"
+        image="./src/assets/image.jpg"
         to="/evento/open-weekend" 
       />
         <EventCard
@@ -43,7 +43,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="../src/assets/2.jpg"
+        image="./src/assets/image.jpg"
         to="/evento/open-weekend"
       />
         <EventCard
@@ -51,7 +51,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="../src/assets/2.jpg"
+        image="./src/assets/image.jpg"
         to="/evento/open-weekend"
       />
         <EventCard
@@ -59,7 +59,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="../src/assets/2.jpg"
+        image="./src/assets/image.jpg"
         to="/evento/open-weekend"
       />
         <EventCard
@@ -67,7 +67,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="../src/assets/2.jpg"
+        image="./src/assets/image.jpg"
         to="/evento/open-weekend"
       />
         <EventCard
@@ -75,7 +75,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="../src/assets/2.jpg"
+        image="./src/assets/image.jpg"
         to="/evento/open-weekend"
       />
         <EventCard
@@ -83,7 +83,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="../src/assets/2.jpg"
+        image="./src/assets/image.jpg"
         to="/evento/open-weekend"
       />
         <EventCard
@@ -91,7 +91,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="../src/assets/2.jpg"
+        image="./src/assets/image.jpg"
         to="/evento/open-weekend"
       />
         <EventCard
@@ -99,7 +99,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="../src/assets/2.jpg"
+        image="./src/assets/image.jpg"
         to="/evento/open-weekend"
       />
         <EventCard
@@ -107,7 +107,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="../src/assets/2.jpg"
+        image="./src/assets/image.jpg"
         to="/evento/open-weekend"
       />
         <EventCard
@@ -115,7 +115,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="../src/assets/2.jpg"
+        image="./src/assets/image.jpg"
         to="/evento/open-weekend"
       />
         <EventCard
@@ -123,7 +123,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="../src/assets/2.jpg"
+        image="./src/assets/image.jpg"
         to="/evento/open-weekend"
       />
       
