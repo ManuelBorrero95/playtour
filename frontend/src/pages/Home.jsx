@@ -1,5 +1,6 @@
 import React from 'react'
 import EventCard from "../components/EventCard";
+import cover from '../assets/image.jpg';
 
 const Home = () => {
 
@@ -27,7 +28,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="./src/assets/image.jpg"
+              image={cover} 
         to="/evento/open-weekend"
       />
         <EventCard
@@ -35,7 +36,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="./src/assets/image.jpg"
+        image={cover}      
         to="/evento/open-weekend" 
       />
         <EventCard
@@ -43,7 +44,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="./src/assets/image.jpg"
+              image={cover} 
         to="/evento/open-weekend"
       />
         <EventCard
@@ -51,7 +52,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="./src/assets/image.jpg"
+              image={cover} 
         to="/evento/open-weekend"
       />
         <EventCard
@@ -59,7 +60,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="./src/assets/image.jpg"
+              image={cover} 
         to="/evento/open-weekend"
       />
         <EventCard
@@ -67,7 +68,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="./src/assets/image.jpg"
+              image={cover} 
         to="/evento/open-weekend"
       />
         <EventCard
@@ -75,7 +76,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="./src/assets/image.jpg"
+              image={cover} 
         to="/evento/open-weekend"
       />
         <EventCard
@@ -83,7 +84,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="./src/assets/image.jpg"
+              image={cover} 
         to="/evento/open-weekend"
       />
         <EventCard
@@ -91,7 +92,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="./src/assets/image.jpg"
+              image={cover} 
         to="/evento/open-weekend"
       />
         <EventCard
@@ -99,7 +100,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="./src/assets/image.jpg"
+              image={cover} 
         to="/evento/open-weekend"
       />
         <EventCard
@@ -107,7 +108,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="./src/assets/image.jpg"
+              image={cover} 
         to="/evento/open-weekend"
       />
         <EventCard
@@ -115,7 +116,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="./src/assets/image.jpg"
+              image={cover} 
         to="/evento/open-weekend"
       />
         <EventCard
@@ -123,7 +124,7 @@ const Home = () => {
         time="1 May"
         club="Centro Padel BCN"
         address="Av. Diagonal 100, Barcelona"
-        image="./src/assets/image.jpg"
+              image={cover} 
         to="/evento/open-weekend"
       />
       
