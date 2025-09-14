@@ -1,48 +1,49 @@
-import { Link } from "react-router-dom";
-// se l'immagine è in src/assets, importala così:
-// import thumb from "../assets/padel.jpg";
-
 export default function EventCard({
   title = "Torneo Paladium",
   time = "10:00 – 13:00",
   club = "Club Paladium",
-  address = "C/ Baloo 12, Barcelona",
-  image = "/padel.jpg", // se metti l'immagine in /public
-  to = "/evento/torneo-paladium", // link alla pagina dettaglio
-  onSignup, // callback opzionale per bottone
+  address = "C/ Bilbao 12, Barcelona",
+  image = "/padel.jpg",
+  onCardClick,   // <— nuovo: apre la modale
+  onSignup,      // opzionale
 }) {
   return (
-    <article className="w-full border-gray-300 border bg-white shadow-sm overflow-hidden mb-3">
-      <div className="flex items-center">
-        {/* thumb */}
-        <Link to={to} className="shrink-0">
+    <button
+      type="button"
+      onClick={onCardClick}
+      className="w-full h-[100px] text-left bg-white border border-gray-200 mb-4 shadow-sm
+                 rounded hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#2665AF]/50
+                 transition"
+    >
+      <div className="flex h-full items-center gap-3">
+        {/* THUMB */}
+        <div className="shrink-0 h-full">
           <img
             src={image}
             alt={title}
-            className="h-16 w-24 object-cover"
+            className="w-[96px] h-full object-cover rounded"
           />
-        </Link>
-
-        {/* testo */}
-        <div className="flex-1 px-3 py-2">
-          <Link to={to} className="block">
-            <h3 className="text-sm font-semibold leading-tight">{title}</h3>
-          </Link>
-          <p className="text-xs text-gray-700">{time}</p>
-          <p className="text-xs text-gray-700">{club}</p>
-          <p className="text-xs text-gray-500">{address}</p>
         </div>
 
-        {/* azione */}
-        <div className="px-3">
+        {/* TESTO */}
+        <div className="flex-1 min-w-0">
+          <h3 className="text-[15px] font-semibold leading-tight line-clamp-1">{title}</h3>
+          <p className="text-[13px] text-gray-700 leading-tight">{time}</p>
+          <p className="text-[13px] text-gray-700 leading-tight">{club}</p>
+          <p className="text-[13px] text-gray-500 leading-tight line-clamp-1">{address}</p>
+        </div>
+
+        {/* CTA: non deve aprire la modale */}
+        <div className="shrink-0 self-start mt-2 mr-2">
           <button
-            onClick={onSignup}
-            className="text-xs rounded-md bg-blue-600 text-white px-3 py-1 hover:bg-blue-700 transition"
+            type="button"
+            onClick={(e) => { e.stopPropagation(); onSignup?.(); }}
+            className="px-4 py-2 text-[12px] rounded-md bg-[#2665AF] text-white hover:bg-[#205593] transition"
           >
             Inscribirse
           </button>
         </div>
       </div>
-    </article>
+    </button>
   );
 }
