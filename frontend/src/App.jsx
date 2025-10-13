@@ -12,7 +12,6 @@ export default function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/crear-evento" element={<SignIn></SignIn>} />
           <Route path="/login" element={<SignIn></SignIn>} />
-          <Route path="/registro" element={<div>Registro</div>} />
         </Routes>
       </main>
     </>
