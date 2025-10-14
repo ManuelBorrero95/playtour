@@ -5,6 +5,7 @@ import axios from "axios";
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPwd, setShowPwd] = useState(false);
 
   const handleLogin = async () => {
     try {
