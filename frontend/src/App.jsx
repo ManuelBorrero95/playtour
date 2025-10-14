@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home"
-
+import SignIn from "./pages/SignIn";
+import CreateEvent from "./pages/CreateEvent"
 
 export default function App() {
   return (
@@ -10,9 +11,8 @@ export default function App() {
       <main className="w-full mx-auto">
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/crear-evento" element={<div>Crear evento</div>} />
-          <Route path="/login" element={<div>Login</div>} />
-          <Route path="/registro" element={<div>Registro</div>} />
+          <Route path="/crear-evento" element={<CreateEvent></CreateEvent>} />
+          <Route path="/login" element={<SignIn></SignIn>} />
         </Routes>
       </main>
     </>

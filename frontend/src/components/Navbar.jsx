@@ -37,7 +37,7 @@ const Navbar = () => {
         
         <h2 className="pb-4 text-lg md:text-xl font-extrabold tracking-tight">
           ENCUENTRA LOS{" "}
-          <span className="text-[#C0AF1E]">EVENTOS DE PADEL</span> EN TU CIUDAD
+          <span className="text-[#C2C719]">EVENTOS DE PADEL</span> EN TU CIUDAD
         </h2>
       </div>
     </header>
