@@ -1,8 +1,27 @@
 import React from 'react'
 import { useState } from "react";
+import axios from "axios";
 
 function SignIn() {
-    const [showPwd, setShowPwd] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async () => {
+    try {
+      const res = await axios.post("https://localhost:5001/auth/login", {
+        email,
+        password,
+      });
+
+      localStorage.setItem("token", res.data.accessToken);
+
+      alert("Login riuscito! Token salvato");
+    } catch (err) {
+      console.error("Errore login:", err);
+      alert("Credenziali non valide");
+    }
+  };
+
     return (
         <>
 
@@ -20,13 +39,19 @@ function SignIn() {
                                 <input id='email'
                                     type='email'
                                     required
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     className='w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#C2C719]'
                                     placeholder='email@example.com' />
                             </div>
                         </div>
                         <div>
                             <div className="flex items-center justify-between">
-                                <label htmlFor="password" className="block text-sm mb-1">Password</label>
+                                <label htmlFor="password" 
+                                className="block text-sm mb-1"
+                                onChange={(e)=>setPassword(e.target.value)}
+                                
+                                >Password</label>
 
                             </div>
                             <div className='relative'>
