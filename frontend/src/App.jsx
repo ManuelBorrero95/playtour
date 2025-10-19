@@ -8,7 +8,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <main className="w-full mx-auto">
+      <main className="max-w-6xl mx-auto px-4 md:px-6 py-6">
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/crear-evento" element={<CreateEvent></CreateEvent>} />
