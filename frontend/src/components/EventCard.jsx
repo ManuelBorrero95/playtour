@@ -8,8 +8,8 @@ export default function EventCard({
   onSignup,      // opzionale
 }) {
   return (
-    <button
-      type="button"
+    <div
+      role="button"
       onClick={onCardClick}
       className="w-full h-[100px] text-left bg-white border border-gray-200 mb-4 shadow-sm
                  rounded hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#2665AF]/50
@@ -44,6 +44,6 @@ export default function EventCard({
           </button>
         </div>
       </div>
-    </button>
+    </div>
   );
 }
