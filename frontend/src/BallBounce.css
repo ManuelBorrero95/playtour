@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 300px;
+  background: #f2f2f2;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.ball {
+  width: 40px;
+  height: 40px;
+  background: #C2C719;
+  border-radius: 50%;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(200px); }
+  100% { transform: translateY(0); }
+}

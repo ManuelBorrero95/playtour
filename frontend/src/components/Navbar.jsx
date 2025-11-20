@@ -26,7 +26,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/registro" className="font-bold hover:underline">
+                <Link to="/signup" className="font-bold hover:underline">
                   Registrarse
                 </Link>
               </li>

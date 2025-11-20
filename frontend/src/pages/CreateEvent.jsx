@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { Calendar, MapPin, Info } from "lucide-react";
 import { APIProvider } from '@vis.gl/react-google-maps';
 import Flatpickr from "react-flatpickr";
+import AddressSearch from "../components/AddressSearch"
+
 
 const CreateEvent = () => {
 
@@ -30,7 +32,15 @@ const CreateEvent = () => {
 
   }
 
+ const [selectedPlace, setSelectedPlace] = useState(null);
 
+ const handlePlaceSelected = (place) => {
+    setSelectedPlace(place);
+  };
+
+
+console.log("ENV:", import.meta.env);
+console.log("API KEY:", import.meta.env.VITE_GOOGLE_MAPS_API_KEY);
 
   return (
     <>
@@ -99,19 +109,25 @@ const CreateEvent = () => {
             </div>
           </div>
         </div>
-        <div className="md:row-start-4 md:col-span-4">
-          <div>
-            <label htmlFor='event-address' className='block text-sm mb-1'>Direccion</label>
-            <div className='relative'>
-              <input id='event-address'
-                type='text'
-                required
-                className='w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#C2C719]'
-                placeholder='Direccion evento' />
-            </div>
-          </div>
-        </div>
+<div className="md:row-start-4 md:col-span-4">
+  <div>
+    <label htmlFor="event-address" className="block text-sm mb-1">
+      Dirección
+    </label>
+    <div className="relative">
+      <AddressSearch
+        onPlaceSelected={handlePlaceSelected}
+        placeholder="Dirección evento"
+        inputClassName="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#C2C719]"
+      />
+    </div>
 
+    {selectedPlace && (
+      <div className="mt-2 text-xs text-gray-500 space-y-1">              
+      </div>
+    )}
+  </div>
+</div>
         <div className="md:row-start-5 md:col-span-4">
           <div>
             <label htmlFor='event-description' className='block text-sm mb-1'>Descripción evento</label>
@@ -124,7 +140,6 @@ const CreateEvent = () => {
             </div>
           </div>
         </div>
-
 
         <div className="md:col-start-5 md:col-span-4 col-span-1 md:row-start-6">
           <button type="submit"
