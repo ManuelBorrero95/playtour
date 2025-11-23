@@ -16,6 +16,11 @@ const Navbar = () => {
           <nav>
             <ul className="flex items-center gap-6 text-sm">
               <li>
+                <Link to="/" className="font-bold hover:underline ">
+                  Home
+                </Link>
+              </li>
+              <li>
                 <Link to="/crear-evento" className="font-bold hover:underline ">
                   Crear evento
                 </Link>

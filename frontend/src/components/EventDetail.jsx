@@ -73,7 +73,7 @@ function EventDetail({ event, onClose }) {
               >
                 WhatsApp
               </a>
-              <button className="ml-auto px-4 py-2 rounded-md bg-[#2665AF] text-white hover:bg-[#205593]">
+              <button className="ml-auto px-4 py-2 rounded-md bg-[#C2C719] text-white hover:bg-[#AAAE16] transition">
                 Inscribirse
               </button>
             </div>

@@ -38,7 +38,7 @@ export default function EventCard({
           <button
             type="button"
             onClick={(e) => { e.stopPropagation(); onSignup?.(); }}
-            className="px-4 py-2 text-[12px] rounded-md bg-[#2665AF] text-white hover:bg-[#205593] transition"
+            className="px-4 py-2 text-[12px] rounded-md bg-[#C2C719] text-white hover:bg-[#AAAE16] transition"
           >
             Inscribirse
           </button>
