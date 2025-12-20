@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home"
 import SignIn from "./pages/SignIn";
-import CreateEvent from "./pages/CreateEvent"
-import SignUp from "./pages/Signup";
+import CreateEvent from "./pages/CreateEvent";
+import SignUp from "./pages/SignUp";
 import BounceLoader from "./components/BounceLoader";
 export default function App() {
 
