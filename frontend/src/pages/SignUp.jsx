@@ -1,10 +1,38 @@
 import React from 'react'
 import { useState } from "react";
-
+import axios from 'axios';
 const SignUp = () => {
 
 
+const [username, setUsername] = useState("");
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
 const [showPwd, setShowPwd] = useState(false);
+
+
+
+const handleRegister = async (e) => {
+  e.preventDefault(); 
+
+  try {
+    await axios.post("https://localhost:7200/auth/register", {
+      email,
+      password,      
+    });
+
+    alert("Registrazione completata! Ora puoi fare il login.");
+    
+  } catch (err) {
+    console.error("Errore registrazione:", err);
+    alert("Registrazione fallita (forse email già usata?)");
+  }
+};
+
+
+
+
+
+
 
   return (
                 <div className='min-h-[calc(100vh-400px)] grid place-items-center'>
@@ -14,15 +42,16 @@ const [showPwd, setShowPwd] = useState(false);
                     <h1 className='text-2xl font-extrabold tracking-tight mb-6'>
                         Sign up
                     </h1>
-                    <form>
+                    <form onSubmit={handleRegister}>
                       <div>
                             <label htmlFor='username' className='block text-sm mb-1'>Username</label>
                             <div className='relative'>
                                 <input id='username'
-                                    type='text'
-                                    required                                                                       
+                                    type='text'                                                                                                      
                                     className='w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#C2C719]'
-                                    placeholder='username' />
+                                    placeholder='username'
+                    
+                                   />
                             </div>
                         </div>
                         <div>
@@ -30,7 +59,9 @@ const [showPwd, setShowPwd] = useState(false);
                             <div className='relative'>
                                 <input id='email'
                                     type='email'
-                                    required                                    
+                                    required    
+                                    value={email}                                    
+                                    onChange={(e)=> setEmail(e.target.value)} 
                                     className='w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#C2C719]'
                                     placeholder='email@example.com' />
                             </div>
@@ -47,6 +78,8 @@ const [showPwd, setShowPwd] = useState(false);
                                     id="password"
                                     type={showPwd ? "text" : "password"}
                                     required
+                                    value={password}
+                                    onChange={(e)=> setPassword(e.target.value)}
                                     className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 pr-10 text-sm outline-none focus:ring-2 focus:ring-emerald-400"
                                     placeholder="••••••••"
                                 />
@@ -65,7 +98,7 @@ const [showPwd, setShowPwd] = useState(false);
                                 </button>
                             </div>                            
                             <button type='submit' className='mt-2.5 w-full rounded-md bg-[#C2C719] py-2 text-white font-semibold hover:bg-[#AAAE16] transition'>
-                              Sign in
+                              Sign up
                             </button>
 
                         </div>

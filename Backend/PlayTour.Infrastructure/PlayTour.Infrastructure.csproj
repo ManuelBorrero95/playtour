@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PlayTour.Application\PlayTour.Application.csproj" />
     <ProjectReference Include="..\PlayTour.Domain\PlayTour.Domain.csproj" />
   </ItemGroup>
 
