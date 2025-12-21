@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PlayTour.Infrastructure.Persistence;
 
@@ -11,9 +12,11 @@ using PlayTour.Infrastructure.Persistence;
 namespace PlayTour.Infrastructure.Migrations
 {
     [DbContext(typeof(PlayTourDbContext))]
-    partial class PlayTourDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251220184643_update-enties")]
+    partial class updateenties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

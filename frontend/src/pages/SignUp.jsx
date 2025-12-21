@@ -8,14 +8,15 @@ const [username, setUsername] = useState("");
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const [showPwd, setShowPwd] = useState(false);
-
+const API_URL = import.meta.env.VITE_API;
 
 
 const handleRegister = async (e) => {
   e.preventDefault(); 
 
   try {
-    await axios.post("https://localhost:7200/auth/register", {
+
+    await axios.post(`${API_URL}/auth/register`, {
       email,
       password,      
     });

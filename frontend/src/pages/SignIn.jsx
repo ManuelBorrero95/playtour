@@ -1,30 +1,33 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPwd, setShowPwd] = useState(false);
 
-const { login } = useAuth();
+  const API_URL = import.meta.env.VITE_API;
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
-const handleLogin = async (e) => {
-  e.preventDefault();
-  try {
-    const res = await axios.post("https://localhost:7200/auth/login", {
-      email,
-      password,
-    });
-    localStorage.setItem("token", res.data.accessToken);
-    login(res.data.accessToken);
-    alert("Credenziali non valide")
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post( `${API_URL}/auth/login`, {
+        email,
+        password,
+      });
+      localStorage.setItem("token", res.data.accessToken);
+      login(res.data.accessToken);
+      navigate("/");
 
-  } catch (err) {
-    console.error("Errore login:", err);
-    alert("Credenziali non valide");
-  }
-};
+
+    } catch (err) {
+      alert("Credenziali non valide");
+    }
+  };
   return (
     <div className="min-h-[calc(100vh-400px)] grid place-items-center">
       <section className="w-full max-w-md">

@@ -44,7 +44,9 @@ namespace PlayTour.Api.Controllers
 
             var user = new User
             {
+
                 Email = request.Email,
+                Username = request.Username,
                 PasswordHash = hash,
                 PasswordSalt = salt
             };
@@ -81,7 +83,8 @@ namespace PlayTour.Api.Controllers
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim("username",user.Username)
            
             };
 
@@ -105,7 +108,8 @@ namespace PlayTour.Api.Controllers
             return new AuthResponse
             {
                 AccessToken = tokenString,
-                ExpiresAt = expires
+                ExpiresAt = expires,
+                Username = user.Username
             };
         }
 
