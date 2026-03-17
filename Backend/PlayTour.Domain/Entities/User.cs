@@ -18,6 +18,6 @@ namespace PlayTour.Domain.Entities
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-
+        public ICollection<Event> Events { get; set; } = new List<Event>();
     }
 }

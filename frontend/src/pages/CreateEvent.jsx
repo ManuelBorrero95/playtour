@@ -3,15 +3,19 @@ import { Calendar, MapPin, Info } from "lucide-react";
 import { APIProvider } from '@vis.gl/react-google-maps';
 import Flatpickr from "react-flatpickr";
 import AddressSearch from "../components/AddressSearch"
-
+import axios from "axios"
 
 const CreateEvent = () => {
 
-  const [date,setDate] = useState(new Date());
-  const [eventHour,setHourDate] = useState("");
+  
 
+const [date,setDate] = useState(new Date());
+const [eventHour,setHourDate] = useState("");
+const [selectedPlace, setSelectedPlace] = useState(null);
+const [eventTypes, setEventTypes] = useState([])
+const API_URL = import.meta.env.VITE_API;
 
-  const formatHHmm = (d) => {
+const formatHHmm = (d) => {
     if (!d) return "";
     const hh = String(d.getHours()).padStart(2, "0");
     const mm = String(d.getMinutes()).padStart(2, "0");
@@ -32,15 +36,26 @@ const CreateEvent = () => {
 
   }
 
- const [selectedPlace, setSelectedPlace] = useState(null);
+
 
  const handlePlaceSelected = (place) => {
     setSelectedPlace(place);
   };
 
 
-console.log("ENV:", import.meta.env);
-console.log("API KEY:", import.meta.env.VITE_GOOGLE_MAPS_API_KEY);
+
+useEffect(()=>{
+
+axios.get(`${API_URL}/auth/login`)
+
+
+},[])
+
+
+
+
+
+
 
   return (
     <>

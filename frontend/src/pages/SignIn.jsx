@@ -52,13 +52,13 @@ function SignIn() {
               />
             </div>
           </div>
-
           <div className="mb-4">
             <div className="flex items-center justify-between">
               <label htmlFor="password" className="block text-sm mb-1">
                 Password
               </label>
             </div>
+
             <div className="relative">
               <input
                 id="password"
@@ -110,7 +110,6 @@ function SignIn() {
               Forgot your password?
             </a>
           </div>
-
           <button
             type="submit"
             className="w-full rounded-md bg-[#C2C719] py-2 text-white font-semibold hover:bg-[#AAAE16] transition"

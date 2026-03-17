@@ -16,13 +16,15 @@ const handleRegister = async (e) => {
 
   try {
 
+    console.error(`Url che sto chiamando:  ${API_URL}/auth/register`);
     await axios.post(`${API_URL}/auth/register`, {
+      username,
       email,
       password,      
     });
 
     alert("Registrazione completata! Ora puoi fare il login.");
-    
+    handleLoginAfterRegister(email,password)
   } catch (err) {
     console.error("Errore registrazione:", err);
     alert("Registrazione fallita (forse email già usata?)");
@@ -30,6 +32,22 @@ const handleRegister = async (e) => {
 };
 
 
+  const handleLoginAfterRegister = async (email,password) => {
+ ;
+    try {
+      const res = await axios.post( `${API_URL}/auth/login`, {
+        email,
+        password,
+      });
+      localStorage.setItem("token", res.data.accessToken);
+      login(res.data.accessToken);
+      navigate("/");
+
+
+    } catch (err) {
+      alert("Credenziali non valide");
+    }
+  };
 
 
 
@@ -48,7 +66,10 @@ const handleRegister = async (e) => {
                             <label htmlFor='username' className='block text-sm mb-1'>Username</label>
                             <div className='relative'>
                                 <input id='username'
-                                    type='text'                                                                                                      
+                                    type='text'      
+                                    required
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}                                                                                                
                                     className='w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#C2C719]'
                                     placeholder='username'
                     

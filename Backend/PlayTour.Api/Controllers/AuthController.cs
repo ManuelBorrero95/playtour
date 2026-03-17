@@ -110,6 +110,7 @@ namespace PlayTour.Api.Controllers
                 AccessToken = tokenString,
                 ExpiresAt = expires,
                 Username = user.Username
+
             };
         }
 
